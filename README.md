@@ -1,6 +1,6 @@
 # Caracal-Rails
 
-Caracal is a ruby library for dynamically creating professional-quality Microsoft Word documents (.docx). 
+[Caracal](https://github.com/ibpinc/caracal) is a ruby library for dynamically creating professional-quality Microsoft Word documents (.docx). 
 
 Caracal-Rails is a drop in solution for registering the Microsoft Word mime type and for establishing a template handler in Rails for the :docx format.  It also provides a helper method for accessing the document object which currently has context.
 
@@ -71,10 +71,10 @@ Because my son likes caracals. :)
 
 ## Inspiration
 
-A tip of the hat to the wonderful PDF generation libraries [Prawn] and [Prawnto].
+A tip of the hat to the wonderful PDF generation libraries [Prawn](https://github.com/prawnpdf/prawn) and [Prawnto](https://github.com/GetJobber/prawnto).
 
 ## License
 
 Copyright (c) 2014 Plia Systems, Inc
 
-MIT License
+[MIT License](https://github.com/ibpinc/caracal-rails/blob/master/LICENSE.txt)
