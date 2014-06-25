@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Caracal::Rails::VERSION
   spec.authors       = ['John Dugan']
   spec.email         = ['jpdugan@gmail.com']
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{ Caracal::Rails makes using Caracal in Rails a no-brainer. }
+  spec.description   = %q{ Caracal::Rails takes care of registering Microsoft Word output with Rails. Essentially, this involves registering the mime type, establishing a template handler for .docx formats, and establishing sane defaults for generating professional quality Word documents. }
   spec.homepage      = 'https://github.com/ibpinc/caracal-rails'
   spec.license       = 'MIT'
 
@@ -18,7 +18,11 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency 'appraisal',  '~> 1.0.0'
-  spec.add_development_dependency 'bundler',    '~> 1.6'
-  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'appraisal',        '~> 1.0'
+  spec.add_development_dependency 'bundler',          '~> 1.6'
+  spec.add_development_dependency 'rake',             '~> 0'
+  spec.add_development_dependency 'rspec-rails',      '~> 2.14'
+  spec.add_development_dependency 'rspec-pride',      '~> 2.3'
+  spec.add_development_dependency 'shoulda-matchers', '~> 2.6'
+  spec.add_development_dependency 'shoulda-context',  '~> 1.2'
 end
