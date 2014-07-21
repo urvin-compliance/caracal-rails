@@ -1,5 +1,5 @@
 module Caracal
   module Rails
-    VERSION = '0.0.1'
+    class TemplateHandler; end
   end
 end
