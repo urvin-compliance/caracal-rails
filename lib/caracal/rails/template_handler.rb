@@ -2,7 +2,7 @@ module Caracal
   module Rails
     class TemplateHandler
       
-      def self.call
+      def self.call(template)
         "Blerg!"
       end
       
