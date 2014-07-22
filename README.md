@@ -32,8 +32,7 @@ Then add a view file with the Caracal extension:
     
 Inside your view, simply issue Caracal commands on the document object:
     
-    docx.name     'quarterly_report'
-    docx.defaults true
+    docx.file_name 'quarterly_report'
     
     docx.font 'Arial'
     docx.font 'Droid Serif'
@@ -49,7 +48,6 @@ Inside your view, simply issue Caracal commands on the document object:
       hr
       h2 'Client A'
       p  'Lorem ipsum dolor...'
-      p  'Styled paragraph text', underline: true
       p do
         text 'Normal text'
         link 'Link text', 'http://www.google.com/', class: 'special
@@ -58,12 +56,10 @@ Inside your view, simply issue Caracal commands on the document object:
       img image_url('example.png'), width: 300, height: 200, align: 'right'
       br
       table data, border: 1 do
-        row_style  rows(0), background_color: 'cccccc', bold: true
-        col_style  cols(4), background_color: 'cccccc', bold: true
-        cell_style rows(0), cols(4), background_color: '3366cc', bold: true
+        cell_style  rows(0), background_color: '3366cc', color: 'ffffff', bold: true
       end
       page
-      em 'This is an bulleted list created staticly'
+      p 'This is an bulleted list'
       ul do
         li do
           strong 'Item 1'
@@ -71,25 +67,10 @@ Inside your view, simply issue Caracal commands on the document object:
         end
         li 'Item 2'
       end
-      p 'This is a numbered list created dynamically', italic: true
-      ol list_array do |list_item|
-        text list_item.name
-      end
       ...
     end
 
-
-### Defaults
-
-Caracal has a pre-built set of reasonable default behaviors and styles. If you want to apply these defaults and append/modify things from there, simply enable defaults at initialization or via the `defaults` method.
-  
-    docx = Caracal::Document.new('Example Document', defaults: true)
-    
-    docx.defaults true
-    
-To gain more fine-grained control of the default settings, run the following command from the terminal to install a set of YAML files in `config/caracal`. The configuration files are self-documented. *Any changes to these configurations will require a restart of your application.*
-
-    rails g caracal:config
+*See the [Caracal](https://github.com/ibpinc/caracal) library for more details.*  
 
 
 ## Contributing
