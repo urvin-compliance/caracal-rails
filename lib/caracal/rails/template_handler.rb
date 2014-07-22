@@ -3,7 +3,7 @@ module Caracal
     class TemplateHandler
       
       def self.call(template)
-        "Blerg!"
+        "Tilt.new('#{ template.identifier }').render(self)"
       end
       
     end
