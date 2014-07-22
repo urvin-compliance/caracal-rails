@@ -4,7 +4,7 @@ require 'caracal/rails/version'
 
 module Caracal
   module Rails
-    class Railtie < Rails::Railtie
+    class Railtie < ::Rails::Railtie
       
       #----------------------------------------------------
       # Register mime types and template handlers.
