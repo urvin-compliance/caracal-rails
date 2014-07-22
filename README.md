@@ -2,7 +2,7 @@
 
 [Caracal](https://github.com/ibpinc/caracal) is a ruby library for dynamically creating professional-quality Microsoft Word documents (.docx). 
 
-Caracal-Rails is a drop in solution for registering the Microsoft Word mime type and for establishing a template handler in Rails for the :docx format.  It also provides a helper method for accessing the document object which currently has context.
+Caracal-Rails is a drop in solution for registering the Microsoft Word mime type and for establishing a template handler in Rails for the :docx format.  All caracal documents are rendered with an explicit block passing an argument named `docx`.
 
 
 ## Installation
