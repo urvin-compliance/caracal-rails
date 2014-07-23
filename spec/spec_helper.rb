@@ -1,7 +1,7 @@
 ENV["RAILS_ENV"] ||= 'test'
 
 # Load the app
-# require File.expand_path("../spec_app/config/environment", __FILE__)
+require File.expand_path("../dummy/config/environment", __FILE__)
 
 # Load the test stack
 require 'rspec/rails'
