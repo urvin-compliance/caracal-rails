@@ -1,20 +1,19 @@
 require 'spec_helper'
 
 describe Caracal::Rails::TemplateHandler do
-  let(:template) { double('template') }
-  
+    
   #--------------------------------------------------------
   # Class Methods
   #--------------------------------------------------------
   
   describe 'class method tests' do
-    subject { Caracal::Rails::TemplateHandler }
     
     # .call
     describe '#call' do
-      before { template.stub(identifier: 'show.docx.caracal') }
+      let(:template) { double('template', identifier: 'show.docx.caracal') }
+      let(:actual)   { Caracal::Rails::TemplateHandler.call(template) }
       
-      it { subject.call(template).should eq "Tilt.new('show.docx.caracal').render(self)" }
+      it { expect(actual).to eq "Tilt.new('show.docx.caracal').render(self)" }
     end
     
   end

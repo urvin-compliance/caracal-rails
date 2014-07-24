@@ -10,12 +10,16 @@ describe Caracal::Rails::Railtie do
         
     # new
     describe '#new' do
-      it { Tilt.new("#{ Rails.root }/app/views/statics/show.docx.caracal").should be_a(Tilt::CaracalTemplate) }
+      let(:actual) { Tilt.new("#{ Rails.root }/app/views/statics/show.docx.caracal") }
+      
+      it { expect(actual).to be_a(Tilt::CaracalTemplate) }
     end
     
     # registration
     describe '#registered?' do
-      it { Tilt.registered?('caracal').should be_true }
+      let(:actual) { Tilt.registered?('caracal') }
+      
+      it { expect(actual).to eq true }
     end
     
   end
@@ -29,7 +33,9 @@ describe Caracal::Rails::Railtie do
      
      # .lookup_by_extension
      describe '#lookup_by_extension' do
-       it { Mime::Type.lookup_by_extension(:docx).should be_a(Mime::Type) }
+       let(:actual) { Mime::Type.lookup_by_extension(:docx) }
+       
+       it { expect(actual).to be_a(Mime::Type) }
      end
      
   end
@@ -41,9 +47,11 @@ describe Caracal::Rails::Railtie do
   
   describe 'template handler tests' do
      
-     # .lookup_by_extension
-     describe '#lookup_by_extension' do
-       it { ActionView::Template.handler_for_extension(:caracal).should eq Caracal::Rails::TemplateHandler }
+     # .handler_for_extension
+     describe '#handler_for_extension' do
+       let(:actual) { ActionView::Template.handler_for_extension(:caracal) }
+       
+       it { expect(actual).to eq Caracal::Rails::TemplateHandler }
      end
      
   end
