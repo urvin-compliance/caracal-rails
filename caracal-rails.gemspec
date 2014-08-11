@@ -6,8 +6,8 @@ require 'caracal/rails/version'
 Gem::Specification.new do |spec|
   spec.name          = 'caracal-rails'
   spec.version       = Caracal::Rails::VERSION
-  spec.authors       = ['John Dugan']
-  spec.email         = ['plia@plia.com']
+  spec.authors       = ['Trade Informatics', 'John Dugan']
+  spec.email         = ['jpdugan@gmail.com']
   spec.summary       = %q{ Caracal::Rails makes using Caracal in Rails a no-brainer. }
   spec.description   = %q{ Caracal::Rails takes care of registering Microsoft Word output with Rails. Essentially, this involves registering the mime type, establishing a template handler for .docx formats, and establishing sane defaults for generating professional quality Word documents. }
   spec.homepage      = 'https://github.com/ibpinc/caracal-rails'

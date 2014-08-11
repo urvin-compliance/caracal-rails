@@ -94,6 +94,6 @@ A tip of the hat to the wonderful PDF generation libraries [Prawn](https://githu
 
 ## License
 
-Copyright (c) 2014 Plia Systems, Inc
+Copyright (c) 2014 Trade Informatics, Inc
 
 [MIT License](https://github.com/ibpinc/caracal-rails/blob/master/LICENSE.txt)
