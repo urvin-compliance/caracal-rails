@@ -4,6 +4,5 @@ source "https://rubygems.org"
 
 gem "rails", "~> 4.0.5"
 gem "sqlite3"
-gem "caracal", :path => "~/workspace/plia/caracal", :ref => "e2b84b191efe6b7871259201413c13918091c6b4"
 
 gemspec :path => "../"
