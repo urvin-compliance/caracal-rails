@@ -1,8 +1,8 @@
 # Caracal-Rails
 
-[Caracal](https://github.com/ibpinc/caracal) is a ruby library for dynamically creating professional-quality Microsoft Word documents (.docx). 
+[Caracal](https://github.com/trade-informatics/caracal) is a ruby library for dynamically creating professional-quality Microsoft Word documents. 
 
-Caracal-Rails is a drop in solution for registering the Microsoft Word mime type and for establishing a template handler in Rails for the :docx format.  All caracal documents are rendered with an explicit block passing an argument named `docx`.
+Caracal-Rails is a drop in solution for registering the Microsoft Word mime type and for establishing a template handler in Rails for the :docx format.  All caracal documents are rendered with an explicit block passing a reference to the Caracal::Document object named `docx`.
 
 
 ## Installation
@@ -32,9 +32,6 @@ Then add a view file with the Caracal extension:
     
 Inside your view, simply issue Caracal commands on the document object:
     
-    docx.file_name 'quarterly_report'
-    
-    docx.font 'Arial'
     docx.font 'Droid Serif'
     
     docx.style 'special' do
@@ -43,39 +40,39 @@ Inside your view, simply issue Caracal commands on the document object:
       size   16
     end
     
-    docx.content do
-      h1 'Quarterly Report'
-      hr
-      h2 'Client A'
-      p  'Lorem ipsum dolor...'
-      p do
-        text 'Normal text'
-        link 'Link text', 'http://www.google.com/', class: 'special
-        text 'More normal text'
+    docx.h1 'Quarterly Report'
+    docx.hr
+    @report.clients.each do |client|
+      docx.h2 client.name
+      docx.p  'Lorem ipsum dolor...'
+      docx.p do
+        text 'This is a sentence with a '
+        link 'link', 'http://www.google.com/', style: 'special
+        text ' in the middle.'
       end
-      img image_url('example.png'), width: 300, height: 200, align: 'right'
-      br
-      table data, border: 1 do
-        cell_style  rows(0), background_color: '3366cc', color: 'ffffff', bold: true
+      docx.img image_url('https://www.example.com/logo.png'), width: 300, height: 200, align: 'right'
+      docx.br
+      docx.table client.tablular_data, border_size: 4 do
+        cell_style  rows[0], background_color: '3366cc', color: 'ffffff', bold: true
       end
-      page
-      p 'This is an bulleted list'
-      ul do
+      docx.page
+      docx.p 'This is an bulleted list.'
+      docx.ul do
         li do
           strong 'Item 1'
           text   'More text'
         end
         li 'Item 2'
       end
-      ...
     end
 
-*See the [Caracal](https://github.com/ibpinc/caracal) library for more details.*  
+
+*See the [Caracal](https://github.com/trade-informatics/caracal) library for more details.*  
 
 
 ## Contributing
 
-1. Fork it ( https://github.com/ibpinc/caracal-rails/fork )
+1. Fork it ( https://github.com/trade-informatics/caracal-rails/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -96,4 +93,4 @@ A tip of the hat to the wonderful PDF generation libraries [Prawn](https://githu
 
 Copyright (c) 2014 Trade Informatics, Inc
 
-[MIT License](https://github.com/ibpinc/caracal-rails/blob/master/LICENSE.txt)
+[MIT License](https://github.com/trade-informatics/caracal-rails/blob/master/LICENSE.txt)
