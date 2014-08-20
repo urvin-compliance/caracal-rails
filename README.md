@@ -47,7 +47,7 @@ Inside your view, simply issue Caracal commands on the document object:
       docx.p  'Lorem ipsum dolor...'
       docx.p do
         text 'This is a sentence with a '
-        link 'link', 'http://www.google.com/', style: 'special
+        link 'link', 'http://www.google.com/', style: 'special'
         text ' in the middle.'
       end
       docx.img image_url('https://www.example.com/logo.png'), width: 300, height: 200, align: 'right'
