@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
   
-  spec.add_dependency 'caracal',  '~> 0.1'
+  spec.add_dependency 'caracal',  '~> 0.2'
   spec.add_dependency 'rails',    '>= 3.2'
   
   spec.add_development_dependency 'appraisal',        '~> 1.0'
