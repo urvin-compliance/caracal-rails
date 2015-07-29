@@ -17,10 +17,10 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
-  
-  spec.add_dependency 'caracal',  '~> 0.2'
+
+  spec.add_dependency 'caracal',  '~> 1.0'
   spec.add_dependency 'rails',    '>= 3.2'
-  
+
   spec.add_development_dependency 'appraisal',        '~> 1.0'
   spec.add_development_dependency 'bundler',          '~> 1.6'
   spec.add_development_dependency 'rspec-rails',      '~> 3.0'
