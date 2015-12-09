@@ -4,10 +4,8 @@
 
 Caracal-Rails is a drop in solution for registering the Microsoft Word mime type and for establishing a template handler in Rails for the :docx format.  All caracal documents are rendered with an explicit block passing a reference to the Caracal::Document object named `docx`.
 
-```
 Please see the [caracal-example](https://github.com/trade-informatics/caracal-example) repository for
 a working demonstration of the library's capabilities.
-```
 
 ## Installation
 
