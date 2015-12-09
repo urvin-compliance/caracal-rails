@@ -1,9 +1,13 @@
 # Caracal-Rails
 
-[Caracal](https://github.com/trade-informatics/caracal) is a ruby library for dynamically creating professional-quality Microsoft Word documents. 
+[Caracal](https://github.com/trade-informatics/caracal) is a ruby library for dynamically creating professional-quality Microsoft Word documents.
 
 Caracal-Rails is a drop in solution for registering the Microsoft Word mime type and for establishing a template handler in Rails for the :docx format.  All caracal documents are rendered with an explicit block passing a reference to the Caracal::Document object named `docx`.
 
+```
+Please see the [caracal-example](https://github.com/trade-informatics/caracal-example) repository for
+a working demonstration of the library's capabilities.
+```
 
 ## Installation
 
@@ -25,21 +29,21 @@ Design your controller normally:
         # collect your models/view models here
       end
     end
-    
+
 Then add a view file with the Caracal extension:
 
     apps/views/reports/show.docx.caracal
-    
+
 Inside your view, simply issue Caracal commands on the document object:
-    
+
     docx.font 'Droid Serif'
-    
+
     docx.style 'special' do
       font   'Droid Serif'
       italic true
       size   16
     end
-    
+
     docx.h1 'Quarterly Report'
     docx.hr
     @report.clients.each do |client|
