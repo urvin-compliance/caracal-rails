@@ -20,17 +20,25 @@ Then execute:
 
 ## Usage
 
-Design your controller normally:
+Design your controller normally and respond to the `docx` format:
 
     class ReportsController < ApplicationController
       def show
         # collect your models/view models here
+
+        respond_to do |format|
+          format.docx { headers["Content-Disposition"] = "attachment; filename=\"caracal.docx\"" }
+        end
       end
     end
 
 Then add a view file with the Caracal extension:
 
     apps/views/reports/show.docx.caracal
+
+Specify the format `docx` in your route:
+
+    resources :reports, only: [:show], format: 'docx'
 
 Inside your view, simply issue Caracal commands on the document object:
 
