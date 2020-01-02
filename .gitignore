@@ -24,3 +24,4 @@ gemfiles/*.gemfile.lock
 spec/dummy/db
 spec/dummy/log
 spec/dummy/tmp
+/.idea
