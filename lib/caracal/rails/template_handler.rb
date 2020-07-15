@@ -2,7 +2,7 @@ module Caracal
   module Rails
     class TemplateHandler
       
-      def self.call(template)
+      def self.call(template, source = nil)
         "Tilt.new('#{ template.identifier }').render(self)"
       end
       
