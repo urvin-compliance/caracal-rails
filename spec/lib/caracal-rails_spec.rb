@@ -49,8 +49,12 @@ describe Caracal::Rails::Railtie do
      
      # .handler_for_extension
      describe '#handler_for_extension' do
+       # The railtie registers the handler inside ActiveSupport.on_load(:action_view),
+       # which fires when ActionView::Base is first loaded rather than during boot.
+       before { ActionView::Base.empty }
+
        let(:actual) { ActionView::Template.handler_for_extension(:caracal) }
-       
+
        it { expect(actual).to eq Caracal::Rails::TemplateHandler }
      end
      

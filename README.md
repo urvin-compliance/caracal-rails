@@ -1,10 +1,10 @@
 # Caracal-Rails
 
-[Caracal](https://github.com/trade-informatics/caracal) is a ruby library for dynamically creating professional-quality Microsoft Word documents.
+[Caracal](https://github.com/urvin-compliance/caracal) is a ruby library for dynamically creating professional-quality Microsoft Word documents.
 
 Caracal-Rails is a drop in solution for registering the Microsoft Word mime type and for establishing a template handler in Rails for the :docx format.  All caracal documents are rendered with an explicit block passing a reference to the Caracal::Document object named `docx`.
 
-Please see the [caracal-example](https://github.com/trade-informatics/caracal-example) repository for
+Please see the [caracal-example](https://github.com/urvin-compliance/caracal-example) repository for
 a working demonstration of the library's capabilities.
 
 ## Installation
@@ -42,9 +42,11 @@ Specify the format `docx` in your route:
 
 Inside your view, simply issue Caracal commands on the document object:
 
-    docx.font 'Droid Serif'
+    docx.font name: 'Droid Serif'
 
-    docx.style 'special' do
+    docx.style do
+      id     'special'
+      name   'Special'
       font   'Droid Serif'
       italic true
       size   16
@@ -61,28 +63,27 @@ Inside your view, simply issue Caracal commands on the document object:
         text ' in the middle.'
       end
       docx.img image_url('https://www.example.com/logo.png'), width: 300, height: 200, align: 'right'
-      docx.br
       docx.table client.tablular_data, border_size: 4 do
-        cell_style  rows[0], background_color: '3366cc', color: 'ffffff', bold: true
+        cell_style  rows[0], background: '3366cc', color: 'ffffff', bold: true
       end
       docx.page
       docx.p 'This is an bulleted list.'
       docx.ul do
         li do
-          strong 'Item 1'
-          text   'More text'
+          text 'Item 1', bold: true
+          text ' More text'
         end
         li 'Item 2'
       end
     end
 
 
-*See the [Caracal](https://github.com/trade-informatics/caracal) library for more details.*  
+*See the [Caracal](https://github.com/urvin-compliance/caracal) library for more details.*  
 
 
 ## Contributing
 
-1. Fork it ( https://github.com/trade-informatics/caracal-rails/fork )
+1. Fork it ( https://github.com/urvin-compliance/caracal-rails/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -101,6 +102,6 @@ A tip of the hat to the wonderful PDF generation libraries [Prawn](https://githu
 
 ## License
 
-Copyright (c) 2014 Trade Informatics, Inc
+Copyright (c) 2014 Urvin LLC
 
-[MIT License](https://github.com/trade-informatics/caracal-rails/blob/master/LICENSE.txt)
+[MIT License](https://github.com/urvin-compliance/caracal-rails/blob/master/LICENSE.txt)
